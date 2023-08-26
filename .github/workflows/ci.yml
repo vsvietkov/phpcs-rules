@@ -1,0 +1,19 @@
+name: Run Tests
+on: [ push ]
+
+jobs:
+  build:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source Git repo
+        uses: actions/checkout@v3
+
+      - name: Build docker image
+        run: make build
+
+      - name: Composer install
+        run: make install
+
+      - name: Run tests
+        run: make phpcs
