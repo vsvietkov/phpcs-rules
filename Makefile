@@ -8,3 +8,9 @@ build:
 
 install:
 	@$(DOCKER-RUN) composer install
+
+phpcs:
+	@$(DOCKER-RUN) composer phpcs
+
+phpcs-fix:
+	@$(DOCKER-RUN) composer phpcs-fix
