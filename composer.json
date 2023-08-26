@@ -16,8 +16,8 @@
         }
     },
     "scripts": {
-        "phpcs": "phpcs --standard=src/ruleset.xml -p --colors src",
-        "phpcs-fix": "phpcbf --standard=src/ruleset.xml -p --colors src"
+        "phpcs": "phpcs --standard=src/ruleset.xml -p --colors src tests",
+        "phpcs-fix": "phpcbf --standard=src/ruleset.xml -p --colors src tests"
     },
     "authors": [
         {
