@@ -2,8 +2,8 @@
 
 namespace Vsvietkov\PhpcsRules;
 
-enum ErrorCodesEnum: string
+class ErrorCodesEnum
 {
-    case NO_SPACE_BEFORE = 'NoSpaceBefore';
-    case SPACE_BEFORE = 'SpaceBefore';
+    public const NO_SPACE_BEFORE = 'NoSpaceBefore';
+    public const SPACE_BEFORE = 'SpaceBefore';
 }

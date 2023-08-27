@@ -24,7 +24,7 @@ class FunctionTopContentSniff implements Sniff
             // No opening brace. As an example, an interface method declaration.
             return;
         }
-        $nextToken = $phpcsFile->findNext(T_WHITESPACE, $openingBracket + 1, exclude: true);
+        $nextToken = $phpcsFile->findNext(T_WHITESPACE, $openingBracket + 1, null, true);
 
         if ($tokens[$nextToken]['line'] - $tokens[$openingBracket]['line'] <= 1) {
             // There are no blank lines between the { and content.

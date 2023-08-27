@@ -18,12 +18,12 @@ trait SpaceBeforeToken
         $fix = $phpcsFile->addFixableError(
             $errorMessage,
             $tokenToRaiseError,
-            ErrorCodesEnum::SPACE_BEFORE->value,
+            ErrorCodesEnum::SPACE_BEFORE,
             $errorMessageArguments,
         );
 
         if ($fix) {
-            $prevToken = $phpcsFile->findPrevious(T_WHITESPACE, $tokenToRaiseError - 1, exclude: true);
+            $prevToken = $phpcsFile->findPrevious(T_WHITESPACE, $tokenToRaiseError - 1, null, true);
             $phpcsFile->fixer->beginChangeset();
 
             for ($i = $tokenToRaiseError; $i > $prevToken; --$i) {

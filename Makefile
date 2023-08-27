@@ -1,7 +1,7 @@
 WORKDIR=/phpcs-rules
 APP=vsvietkov-phpcs-rules
 
-DOCKER-RUN=docker run --rm -t -v ${PWD}:$(WORKDIR) -w $(WORKDIR)
+DOCKER-RUN=docker run --rm -t -v ${PWD}:$(WORKDIR) -w $(WORKDIR) $(APP)
 
 build:
 	@docker build --tag $(APP) .
@@ -14,3 +14,9 @@ phpcs:
 
 phpcs-fix:
 	@$(DOCKER-RUN) composer phpcs-fix
+
+phpunit:
+	@$(DOCKER-RUN) composer phpunit
+
+autoload:
+	@$(DOCKER-RUN) composer dump-autoload

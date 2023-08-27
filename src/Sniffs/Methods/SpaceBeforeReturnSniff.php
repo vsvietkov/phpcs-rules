@@ -22,7 +22,7 @@ class SpaceBeforeReturnSniff implements Sniff
     public function process(File $phpcsFile, $stackPtr): void
     {
         $tokens = $phpcsFile->getTokens();
-        $prevToken = $phpcsFile->findPrevious(T_WHITESPACE, $stackPtr - 1, exclude: true);
+        $prevToken = $phpcsFile->findPrevious(T_WHITESPACE, $stackPtr - 1, null, true);
         $prevOpenCurlyBracket = $phpcsFile->findPrevious(T_OPEN_CURLY_BRACKET, $stackPtr - 1);
 
         if ($tokens[$prevToken]['line'] + 1 === $tokens[$stackPtr]['line']) {

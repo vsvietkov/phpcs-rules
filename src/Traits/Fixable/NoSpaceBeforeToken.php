@@ -18,7 +18,7 @@ trait NoSpaceBeforeToken
         $fix = $phpcsFile->addFixableError(
             $errorMessage,
             $tokenToRaiseError,
-            ErrorCodesEnum::NO_SPACE_BEFORE->value,
+            ErrorCodesEnum::NO_SPACE_BEFORE,
             $errorMessageArguments,
         );
 

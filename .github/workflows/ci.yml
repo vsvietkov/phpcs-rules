@@ -15,5 +15,8 @@ jobs:
       - name: Composer install
         run: make install
 
-      - name: Run tests
+      - name: Run linter
         run: make phpcs
+
+      - name: Run tests
+        run: make phpunit
