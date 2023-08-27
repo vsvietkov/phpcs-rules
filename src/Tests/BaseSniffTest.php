@@ -11,8 +11,9 @@ abstract class BaseSniffTest extends AbstractSniffUnitTest
     {
         parent::setUp();
 
-        $this->testsDir = (isset($_SERVER['PHPSTORM']) ? '/opt/project/src/Tests/' : '/phpcs-rules/src/Tests/');
-        $this->standardsDir = (isset($_SERVER['PHPSTORM']) ? '/opt/project/src/' : '/phpcs-rules/src/');
+        $path = isset($_SERVER['PHPSTORM']) ? '/opt/project/' : '/phpcs-rules/';
+        $this->testsDir = $path . 'src/Tests/';
+        $this->standardsDir = $path . 'src/';
         AllSniffs::suite(); // Workaround for tests to set required variables
     }
 }
