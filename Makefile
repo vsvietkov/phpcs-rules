@@ -7,7 +7,7 @@ build:
 	@docker build --tag $(APP) .
 
 install:
-	@$(DOCKER-RUN) composer install && composer dump-autoload
+	@$(DOCKER-RUN) sh -c "composer install && composer dump-autoload"
 
 phpcs:
 	@$(DOCKER-RUN) composer phpcs
